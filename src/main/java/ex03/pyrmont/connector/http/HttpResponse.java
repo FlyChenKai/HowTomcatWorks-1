@@ -547,7 +547,7 @@ public class HttpResponse implements HttpServletResponse {
             try {
                 contentLength = Integer.parseInt(value);
             } catch (NumberFormatException e) {
-                ;
+                e.printStackTrace();
             }
             if (contentLength >= 0)
                 setContentLength(contentLength);
