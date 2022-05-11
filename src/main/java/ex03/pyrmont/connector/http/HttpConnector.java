@@ -38,6 +38,7 @@ public class HttpConnector implements Runnable {
     }
 
     public void start() {
+        // 处理每个请求都会创建一个线程
         Thread thread = new Thread(this);
         thread.start();
     }

@@ -136,6 +136,7 @@ public class HttpProcessor {
     private void parseRequest(SocketInputStream input, OutputStream output)
             throws IOException, ServletException {
 
+        // 获取http请求行
         // Parse the incoming request line
         input.readRequestLine(requestLine);
         String method =

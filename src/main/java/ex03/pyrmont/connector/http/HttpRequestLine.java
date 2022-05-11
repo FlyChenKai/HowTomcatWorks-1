@@ -90,6 +90,7 @@ final class HttpRequestLine {
      * Test if the value of the header includes the given char array.
      */
     public int indexOf(char[] buf, int end) {
+        // 在char[] uri中定位char[] buf
         char firstChar = buf[0];
         int pos = 0;
         while (pos < uriEnd) {

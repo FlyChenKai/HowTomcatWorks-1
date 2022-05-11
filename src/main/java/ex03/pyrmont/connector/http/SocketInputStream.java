@@ -176,6 +176,7 @@ public class SocketInputStream extends InputStream {
                 pos = 0;
                 readStart = 0;
             }
+            // 读到空格结束循环
             if (buf[pos] == SP) {
                 space = true;
             }
@@ -464,11 +465,15 @@ public class SocketInputStream extends InputStream {
      */
     public int read()
             throws IOException {
+        // pos:当前位置
+        // count:buf中的总字节数
         if (pos >= count) {
+            // 再次从inputStream装填数据
             fill();
             if (pos >= count)
                 return -1;
         }
+        // 将有符号的byte转换为无符号类型
         return buf[pos++] & 0xff;
     }
 
